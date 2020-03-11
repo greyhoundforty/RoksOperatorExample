@@ -1,0 +1,16 @@
+---
+apiVersion: ibmcloud.ibm.com/v1alpha1
+kind: Service
+metadata:
+    name: roks-etcd-rt
+spec:
+    plan: standard
+    serviceClass: databases-for-etcd             
+---
+apiVersion: ibmcloud.ibm.com/v1alpha1
+kind: Binding
+metadata:
+    name: binding-etcd-service
+spec:
+    serviceName: roks-etcd-rt
+    secretName: roks-etcd-rt-secret
